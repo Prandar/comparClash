@@ -1,0 +1,26 @@
+<mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile>1</mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="carteChoix">
+            <mat-card-header>
+                <mat-card-title>Chien</mat-card-title>
+            </mat-card-header>
+                <img class="mat-card-lg-image" src="https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/5/b/e/5bed323be7_50156751_expression-faciale-chien.jpg">
+            <mat-card-actions>
+                <button (click)="addChoixChienChat()" mat-raised-button  color="primary">VOTE</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="carteChoix">
+            <mat-card-header>
+                <mat-card-title>Chat</mat-card-title>
+            </mat-card-header>
+                <img class="mat-card-lg-image" src="https://www.i-cad.fr/uploads/accueil_chat.png">
+            <mat-card-actions>
+                <button (click)="addChoixChienChat()" mat-raised-button  color="primary">VOTE</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+</mat-grid-list>

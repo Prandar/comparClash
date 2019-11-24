@@ -1,0 +1,16 @@
+<form [formGroup]="model">
+    <h3>Votre Pseudo</h3>
+    <mat-form-field>
+        <input matInput formControlName="name" placeholder="Pseudo"/>
+    </mat-form-field>
+    <h3>Chien VS Chat</h3>
+    <div formArrayName="choix">
+        <div *ngFor= "let p of choixChienChat.controls, let i=index" [formGroupName]="i">
+            <mat-form-field>
+                <input matInput formControlName="lechoix" placeholder="Vote"/>
+            </mat-form-field>
+        </div>
+    </div>
+    <button (click)="addChoixChienChat()" mat-raised-button color="accent">Ajouter vote</button>
+    <app-carte-choix></app-carte-choix>
+</form>
