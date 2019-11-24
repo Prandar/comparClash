@@ -5,3 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .carteChoix {
     max-width: 400px;
 }
+
+.carteChoixMini {
+    max-width: 200px;
+}
