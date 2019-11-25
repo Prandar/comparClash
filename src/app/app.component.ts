@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  today: number = Date.now();
+  options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   title = 'ClashCompar';
 }

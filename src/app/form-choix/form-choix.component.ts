@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { emailDomainAllowedValidator} from "./email.validator";
 
 @Component({
   selector: 'app-form-choix',
@@ -13,7 +14,11 @@ export class FormChoixComponent implements OnInit {
 
   ngOnInit() {
     this.model = this.formBuilder.group({
-        name: '',
+        email: ['',[
+            Validators.required,
+            Validators.email,
+            emailDomainAllowedValidator('epsi.fr')
+        ]],
         choix: this.formBuilder.array([])
     });
   }

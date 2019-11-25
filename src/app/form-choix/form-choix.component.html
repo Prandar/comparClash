@@ -1,7 +1,16 @@
 <form [formGroup]="model">
-    <h3>Votre Pseudo</h3>
+    <h3>Votre Email</h3>
     <mat-form-field>
-        <input matInput formControlName="name" placeholder="Pseudo"/>
+        <input matInput formControlName="email" placeholder="Email" />
+        <mat-error *ngIf="email.invalid && email.errors?.email">
+            Mauvais format d'email
+        </mat-error>
+        <mat-error *ngIf="email.invalid && email.errors?.required">
+            email obligatoire
+        </mat-error>
+        <mat-error *ngIf="email.invalid && email.errors?.forbiddenDomain">
+           le domaine {{email.errors?.forbiddenDomain}} est interdit
+        </mat-error>
     </mat-form-field>
     <h3>Chien VS Chat</h3>
     <div formArrayName="choix">
@@ -13,4 +22,5 @@
     </div>
     <button (click)="addChoixChienChat()" mat-raised-button color="accent">Ajouter vote</button>
     <app-carte-choix></app-carte-choix>
+
 </form>
